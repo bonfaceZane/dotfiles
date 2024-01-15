@@ -30,7 +30,15 @@
         in
         {
           default = pkgs.mkShell {
-            buildInputs = with pkgs; [ go gopls gotools go-tools ];
+            buildInputs = with pkgs; [ 
+				go
+				gopls
+				gotools
+				go-tools
+				
+				cargo
+				rustc
+			];
           };
         });
     };
