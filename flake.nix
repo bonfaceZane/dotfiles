@@ -29,10 +29,6 @@
           }
         ];
       };
-
-
-
-
     };
 
 	defaultPackage.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin;
