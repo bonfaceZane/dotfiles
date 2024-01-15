@@ -34,7 +34,8 @@
           config = import ./nixos/home.nix;
         })
       ];
-    # output
+    };
 
+    # output
   };
 }
