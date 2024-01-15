@@ -8,6 +8,9 @@
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager }: {
+
+	devShell.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.mkShell { };
+
     nixosConfigurations = {
       hostname = nixpkgs.lib.nixosSystem {
         system = "aarch64-darwin"; # Set the target system to macOS M1
@@ -31,8 +34,10 @@
           config = import ./nixos/home.nix;
         })
       ];
-    };
 
+
+    };
     # output
+
   };
 }
