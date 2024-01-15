@@ -10,6 +10,8 @@
   outputs = inputs@{ self, nixpkgs, home-manager }: {
 
 	devShell.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.mkShell { };
+	devShells.aarch64-darwin.default =   let pkgs = import nixpkgs { system = "aarch64-darwin"; }; in pkgs.mkShell { packages = [pkgs.python310 pkgs.python311]; };
+
 
     nixosConfigurations = {
       hostname = nixpkgs.lib.nixosSystem {
