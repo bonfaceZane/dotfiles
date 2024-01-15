@@ -14,7 +14,6 @@
 
 		# Other sources
 		# comma = { url = github:Shopify/comma; flake = false; };
-		
 	};
 
   outputs = { self, nixpkgs, darwin, home-manager, ...}:
