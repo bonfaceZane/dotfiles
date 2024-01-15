@@ -10,7 +10,7 @@
   outputs = inputs@{ self, nixpkgs, home-manager }: {
     nixosConfigurations = {
       hostname = nixpkgs.lib.nixosSystem {
-        system = "aarch64-darwin";
+        system = "aarch64-darwin"; # Set the target system to macOS M1
         modules = [
           ./configuration.nix
 
@@ -20,13 +20,21 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.obwoni000 = import ./nixos/home.nix;
+            home-manager.users.obwoni000 = import ./nixos/home.nix; 
 
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
           }
         ];
       };
+
+    defaultPackage.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.${home-manager.system};
+    home-manager.aarch64-darwin = home-manager.makeOverlays [
+      (home-manager.overlays.override {
+        config = import ./nixos/home.nix;
+      })
+    ];
+
     };
   };
 }
