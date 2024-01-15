@@ -18,6 +18,10 @@
       git
       zellij
       htop
+      lazygit
+
+      nodePackages.typescript
+      nodePackages.typescript-language-server
 
        # archives
       zip
