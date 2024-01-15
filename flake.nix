@@ -28,7 +28,7 @@
         ];
       };
 
-	  defaultPackage.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.${home-manager.system};
+	  defaultPackage.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin;
       home-manager.aarch64-darwin = home-manager.makeOverlays [
         (home-manager.overlays.override {
           config = import ./nixos/home.nix;
