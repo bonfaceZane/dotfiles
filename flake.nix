@@ -40,7 +40,7 @@
         (home-manager.overlays.override {
           config = import ./nixos/home.nix;
         })
-      ];
+    ];
 
   };
 }
