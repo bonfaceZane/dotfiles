@@ -1,2 +1,76 @@
 ---
 # vars file for common
+homebrew_installed_packages:
+      - autoconf
+      - bash-completion
+      - git
+      - go
+      - wget
+      - zsh
+      - httpie
+      - htop
+      - sqlite
+      - nmap
+      - nvm
+      - php
+      - ssh-copy-id
+      - cowsay
+      - readline
+      - openssl
+      - zsh-history-substring-search
+      - jq
+      - watch
+      - bun
+
+homebrew_taps: []
+homebrew_upgrade_all: true
+homebrew_upgrade_all_cask: true
+homebrew_cask_apps:
+      - 1password
+      - alfred
+      - appcleaner-for-mac
+      - bartender
+      - bettertouchtool
+      - caffeine
+      - cleanmymac
+      - docker
+      - dropbox
+      - firefox
+      - font-fira-code
+      - font-inter
+      - font-jetbrains-mono
+      - google-chrome
+      - iterm2
+      - microsoft-edge
+      - ngrok
+      - onedrive
+      - postman
+      - qbittorrent
+      - slack
+      - spotify
+      - sublime-text
+      - teamviewer
+      - tor-browser
+      - tunnelblick
+      - visual-studio-code
+      - vlc
+      - whatsapp
+      - zoom
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+
+gem_packages: []
+# - name: bundler
+#   state: present # present/absent/latest, default: present
+#   version: "~> 1.15.1" # default: N/A
+
+pip_packages: []
+# - name: ansible
+#   state: present # present/absent/latest, default: present
+#   version: "~> 2.7.0" # default: N/A
+
+npm_packages:
+      - name: prettier
+        state: present

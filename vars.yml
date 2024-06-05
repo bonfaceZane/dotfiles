@@ -28,11 +28,12 @@ dotfiles_files:
       - .vimrc
 
 homebrew_installed_packages:
-      # - ansible # Installed via Pip.
       - autoconf
       - bash-completion
       - git
       - go
+      - wget
+      - zsh
       - httpie
       - htop
       - sqlite
@@ -43,9 +44,19 @@ homebrew_installed_packages:
       - cowsay
       - readline
       - openssl
-      - wget
       - zsh-history-substring-search
       - jq
+      - watch
+      - bun
+      - coreutils
+      - tree
+      - ruby
+      - ruby-bundler
+      - ansible
+      - ansible-lint
+      - zsh-autosuggestions
+      - zsh-syntax-highlighting
+      - ffmpeg
 
 homebrew_taps: []
 homebrew_upgrade_all: true
@@ -97,10 +108,10 @@ pip_packages: []
 #   state: present # present/absent/latest, default: present
 #   version: "~> 2.7.0" # default: N/A
 
-npm_packages: []
-# - name: npm
-#   state: present # present/absent/latest, default: present
-#   version: "~> 5.6.0" # default: N/A
-
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
+
+golang:
+      global_installs:
+            - github.com/rogpeppe/godef@latest
+            - github.com/cosmtrek/air@latest

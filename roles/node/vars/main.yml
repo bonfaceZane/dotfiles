@@ -1,0 +1,11 @@
+---
+node_globals:
+      # - pnpm
+      - name: vercel
+        state: present
+        version: "~> 1.0.0"
+      - typescript
+      - typescript-language-server
+      - tide
+      - prettier
+      - supabase
