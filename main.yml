@@ -1,22 +1,15 @@
 - name: Bootstrap development environment
   hosts: localhost
+  connection: local
+  gather_facts: no
+  become: yes
 
   tasks:
         - name: Install dependencies
-          become: yes
-          community.general.package:
+          community.general.homebrew:
                 name: "{{ item }}"
                 state: present
           loop:
-                - python3-pip
-                - python3-venv
-                - python3-dev
-                - build-essential
-                - libssl-dev
-                - libffi-dev
-                - libxml2-dev
-                - libxslt1-dev
-                - zlib1g-dev
                 - git
                 - curl
                 - wget
@@ -43,5 +36,3 @@
                 - ansible-lint
                 - molecule
                 - docker
-
-- when: ansible_distribution == "MacOSX"
