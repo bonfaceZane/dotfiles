@@ -1,0 +1,106 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_dotfiles: true
+configure_terminal: true
+configure_osx: true
+
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: false
+dockitems_remove: []
+
+# - Launchpad
+# - TV
+# - Podcasts
+# - 'App Store'
+dockitems_persist: []
+
+configure_sudoers: false
+
+dotfiles_repo: https://github.com/bonfaceZane/dotfiles.git
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: ~/Users/obwoni000/Documents/baantu/dotfiles-config
+dotfiles_files:
+      - .zshrc
+      - .gitignore
+      - .inputrc
+      - .osx
+      - .vimrc
+
+homebrew_installed_packages:
+      # - ansible # Installed via Pip.
+      - autoconf
+      - bash-completion
+      - git
+      - go
+      - httpie
+      - htop
+      - sqlite
+      - nmap
+      - nvm
+      - php
+      - ssh-copy-id
+      - cowsay
+      - readline
+      - openssl
+      - wget
+      - zsh-history-substring-search
+      - jq
+
+homebrew_taps: []
+homebrew_upgrade_all: true
+homebrew_upgrade_all_cask: true
+homebrew_cask_appdir: /Applications
+brew_cask_apps:
+      - 1password
+      - alfred
+      - appcleaner-for-mac
+      - bartender
+      - bettertouchtool
+      - caffeine
+      - cleanmymac
+      - docker
+      - dropbox
+      - firefox
+      - font-fira-code
+      - font-inter
+      - font-jetbrains-mono
+      - google-chrome
+      - iterm2
+      - microsoft-edge
+      - ngrok
+      - onedrive
+      - postman
+      - qbittorrent
+      - slack
+      - spotify
+      - sublime-text
+      - teamviewer
+      - tor-browser
+      - tunnelblick
+      - visual-studio-code
+      - vlc
+      - whatsapp
+      - zoom
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+
+gem_packages: []
+# - name: bundler
+#   state: present # present/absent/latest, default: present
+#   version: "~> 1.15.1" # default: N/A
+
+pip_packages: []
+# - name: ansible
+#   state: present # present/absent/latest, default: present
+#   version: "~> 2.7.0" # default: N/A
+
+npm_packages: []
+# - name: npm
+#   state: present # present/absent/latest, default: present
+#   version: "~> 5.6.0" # default: N/A
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []
