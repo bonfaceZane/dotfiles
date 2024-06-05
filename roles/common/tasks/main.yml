@@ -1,2 +1,24 @@
 ---
 # tasks file for common
+
+- name: Install dependencies
+  community.general.homebrew:
+        name: "{{ item }}"
+        state: present
+        update_homebrew: yes
+  loop:
+        - git
+        - curl
+        - wget
+        - unzip
+        - zip
+        - tree
+        - jq
+        - htop
+        - vim
+        - neovim
+        - nano
+        - tmux
+        - zsh
+        - bash-completion
+        - chezmoi

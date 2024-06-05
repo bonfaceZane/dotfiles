@@ -1,38 +1,6 @@
 - name: Bootstrap development environment
   hosts: localhost
-  connection: local
   gather_facts: no
-  become: yes
-
-  tasks:
-        - name: Install dependencies
-          community.general.homebrew:
-                name: "{{ item }}"
-                state: present
-          loop:
-                - git
-                - curl
-                - wget
-                - unzip
-                - zip
-                - tree
-                - jq
-                - htop
-                - vim
-                - neovim
-                - nano
-                - tmux
-                - zsh
-                - bash-completion
-                - chezmoi
-
-        - name: Install pip packages
-          become: yes
-          pip:
-                name: "{{ item }}"
-                state: present
-          loop:
-                - ansible
-                - ansible-lint
-                - molecule
-                - docker
+  roles:
+        #   - common
+        - neovim
